@@ -1,0 +1,76 @@
+buildscript {
+    ext {
+        buildToolsVersion = "33.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.4.2")
+    }
+}
+
+apply plugin: 'com.android.library'
+
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+    compileSdkVersion safeExtGet('compileSdkVersion', 33)
+    buildToolsVersion safeExtGet('buildToolsVersion', '33.0.0')
+
+    defaultConfig {
+        minSdkVersion safeExtGet('minSdkVersion', 21)
+        targetSdkVersion safeExtGet('targetSdkVersion', 33)
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'GradleCompatible'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        jumboMode true
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // ACS Bluetooth SDK
+    implementation files('libs/acsbt-1.0.0preview8.jar')
+
+    // ACS USB SDK
+    implementation files('libs/acssmc-1.1.5.jar')
+}

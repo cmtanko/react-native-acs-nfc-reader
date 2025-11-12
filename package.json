@@ -1,0 +1,43 @@
+{
+  "name": "react-native-acs-reader",
+  "version": "1.0.0",
+  "description": "Unified React Native module for ACS card readers supporting both Bluetooth and USB connections",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "acs",
+    "nfc",
+    "rfid",
+    "card-reader",
+    "bluetooth",
+    "usb",
+    "acr122u",
+    "acr1255u",
+    "acr1281u"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.70.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "src/",
+    "android/",
+    "ios/",
+    "react-native-acs-reader.podspec",
+    "README.md"
+  ]
+}

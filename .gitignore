@@ -1,0 +1,32 @@
+# OSX
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Android
+*.iml
+.gradle
+/android/local.properties
+/android/.gradle
+/android/captures/
+/android/build/
+/android/.idea
+/android/.cxx/
+
+# iOS
+/ios/build/
+/ios/Pods/
+/ios/.xcode.project/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Misc
+.env
